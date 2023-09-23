@@ -1586,8 +1586,13 @@ responsive
   .phone-info h4 span {
     display: block;
     margin-top: 15px;
+    text-align: center;
+    position: relative;
+    left: 40px;
+   
   }
   .phone-info h4 span i {
     margin-left: 0px;
   }
+  
 }
