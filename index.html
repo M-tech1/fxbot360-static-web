@@ -280,7 +280,12 @@
   </div>
 
   <div id="blog" class="our-blog section">
+
+
+
     <div class="container">
+
+
       <div class="row">
         <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
           <div class="section-heading">
@@ -306,8 +311,10 @@
                 </ul> -->
                 <a href="#"><h4>AI BOT super-power &amp; Trade secret </h4></a>
                 <p>Don't be ignorant, Never loss trades again, one-Time payment, Life-time Robot.</p>
-                <div class="main-blue-button">
-                  <a href="#">Discover More</a>
+                <div id="previewButton" class="main-blue-button">
+                  <a href="">See live result...</a>
+                 
+
                 </div>
               </div>
             </div>
@@ -317,17 +324,90 @@
           <div class="right-list">
             <ul>
               <li>
+                
                 <div class="left-content align-self-center">
-                  <!-- <span><i class="fa fa-calendar"></i> 18 Mar 2021</span> -->
+               
                   <a href="#"><h4>Smart Features &amp; Results</h4></a>
                   <p>Smart automation of trade with 24/5 scalping strategy...</p>
                 </div>
-                <div class="right-image">
+                <!-- <div class="right-image">
                   <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
-                </div>
+                </div> -->
+
+<!-- new code goes here.... -->
+
+<style>
+  #image-preview {
+    position: relative;
+    overflow: hidden;
+    width: 300px; /* Set the width of the preview container */
+    height: 200px; /* Set the height of the preview container */
+  }
+
+  #image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+  }
+
+  #image-preview:hover img {
+    transform: scale(1.2); /* Increase scale on hover (adjust as needed) */
+  }
+
+  #download-button {
+position: absolute;
+border-radius: 10px;
+width: 90px;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+padding: 10px;
+background-color: #0f5c74;
+color: #fff;
+border: none;
+cursor: pointer;
+display: none; /* Initially hide the download button */
+}
+
+</style>
+
+
+<div id="image-preview">
+<img src="assets/result.JPG" alt="Image Preview"> 
+<button id="download-button" onclick="downloadImage()">View</button>
+</div>
+
+<script>
+// Function to trigger image download
+function downloadImage() {
+var imageSrc = document.querySelector('#image-preview img').src;
+var a = document.createElement('a');
+a.href = imageSrc;
+a.download = 'Result-image.jpg'; // You can customize the downloaded file name
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+}
+
+// Show download button on hover
+var imagePreview = document.getElementById('image-preview');
+var downloadButton = document.getElementById('download-button');
+
+imagePreview.addEventListener('mouseenter', function () {
+downloadButton.style.display = 'block';
+});
+
+imagePreview.addEventListener('mouseleave', function () {
+downloadButton.style.display = 'none';
+});
+</script>
+           
               </li>
+
               <li>
                 <div class="left-content align-self-center">
+                
                   <!-- <span><i class="fa fa-calendar"></i> 14 Mar 2021</span> -->
                   <a href="#"><h4>Trade Security &amp; Consistency</h4></a>
                   <p>Never loss trades again, one-Time payment, Life-time Robot</p>
@@ -345,6 +425,9 @@
       </div>
     </div>
   </div>
+
+
+
 
   <div id="contact" class="contact-us section">
     <div class="container">
